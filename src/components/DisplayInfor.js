@@ -1,4 +1,5 @@
 import React from "react";
+import './DisplayInfor.scss'
 
 class DisplayInfor extends React.Component {
     state = {
@@ -16,7 +17,7 @@ class DisplayInfor extends React.Component {
         // Destructuring Array / Object
         const { listUsers } = this.props;
         return (
-            <div>
+            <div className="display-infor-container">
                 <div>
                     <span onClick={() => { this.handleShowHide() }}>
                         {this.state.isShowListUser === true ? "Hide List Users" : "Show List Users"}
@@ -28,7 +29,7 @@ class DisplayInfor extends React.Component {
                             return (
                                 // Dấu + trước chữ user dùng để convert nhanh từ kiểu string sang number
                                 <div key={user.id} className={+user.age > 18 ? "green" : "red"}>
-                                    <div>My name is {user.name}</div>
+                                    <div style={{ color: 'yellow', paddingTop: '50px' }}>My name is {user.name}</div>
                                     <div>My age is {user.age}</div>
                                     <hr />
                                 </div>
