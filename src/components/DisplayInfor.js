@@ -17,9 +17,10 @@ class DisplayInfor extends React.Component {
     render() {
         // Destructuring Array / Object
         const { listUsers } = this.props;
+        // File Components ReactJS = Template HTML + Logic JS
         return (
             <div className="display-infor-container">
-                <img src={logo} />
+                {/* <img src={logo} /> */}
                 <div>
                     <span onClick={() => { this.handleShowHide() }}>
                         {this.state.isShowListUser === true ? "Hide List Users" : "Show List Users"}
@@ -31,8 +32,14 @@ class DisplayInfor extends React.Component {
                             return (
                                 // Dấu + trước chữ user dùng để convert nhanh từ kiểu string sang number
                                 <div key={user.id} className={+user.age > 18 ? "green" : "red"}>
-                                    <div>My name is {user.name}</div>
-                                    <div>My age is {user.age}</div>
+                                    <div>
+                                        <div>My name is {user.name}</div>
+                                        <div>My age is {user.age}</div>
+                                    </div>
+                                    <div>
+                                        <button onClick={() => this.props.handleDeleteUser(user.id)}> Delete </button>
+                                    </div>
+
                                     <hr />
                                 </div>
                             )
