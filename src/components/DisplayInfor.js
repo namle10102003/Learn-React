@@ -26,7 +26,7 @@ class DisplayInfor extends React.Component {
                     </span>
                 </div>
                 {this.state.isShowListUser &&
-                    <div>
+                    <>
                         {listUsers.map((user, index) => {
                             return (
                                 // Dấu + trước chữ user dùng để convert nhanh từ kiểu string sang number
@@ -37,7 +37,7 @@ class DisplayInfor extends React.Component {
                                 </div>
                             )
                         })}
-                    </div>
+                    </>
                 }
             </div>
         );

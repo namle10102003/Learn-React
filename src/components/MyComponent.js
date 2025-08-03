@@ -22,15 +22,21 @@ class MyComponent extends React.Component {
     render() {
         // DRY: Don't repeat yourself
         return (
-            <div>
-                <AddUserInfor
-                    handleAddNewUser={this.handleAddNewUser}
-                />
-                <br /><br />
-                <DisplayInfor
-                    listUsers={this.state.listUsers}
-                />
-            </div>
+            // <> là Short-syntax của Fragments
+            <>
+                <div className="a">
+                    <AddUserInfor
+                        handleAddNewUser={this.handleAddNewUser}
+                    />
+                    <br /><br />
+                    <DisplayInfor
+                        listUsers={this.state.listUsers}
+                    />
+                </div>
+                <div className="b">
+
+                </div>
+            </>
         );
     };
 };
